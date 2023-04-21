@@ -1,0 +1,55 @@
+@import "../../App.scss";
+
+.footer {
+    background-color:  white;
+    color: gray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    font-size: 14px;
+    text-align: center;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+
+    a {
+        color: gray;
+
+        &:hover{
+            color: black;
+        }
+    }
+
+    .social-links{
+        display:  flex;
+        margin-top: 16px;
+
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            margin-right: 8px;
+            color: white;
+            background-color: black;
+            border-radius: 50%;
+
+            &:hover {
+                background-color: black;
+            }
+
+            &:last-child{
+                margin-right: 0;
+            }
+
+            svg {
+                width: 16px;
+                height: 16px;
+            }
+
+        }
+    }
+}
