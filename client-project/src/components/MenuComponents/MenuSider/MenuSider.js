@@ -5,7 +5,7 @@ import {
   TeamOutlined,
   AppstoreAddOutlined,
   AppstoreOutlined,
-
+  PartitionOutlined,
 } from "@ant-design/icons";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./MenuSider.scss";
@@ -16,7 +16,10 @@ export const MenuSider = (props) => {
   const location = useLocation();
 
   const menuItems = [
-    { key: "users", icon: <HomeOutlined />, label: "Gestion de usuarios" },
+    { key: "users",
+      icon: <HomeOutlined />, 
+      label: "Gestion de usuarios" 
+    },
     {
       key: "products",
       icon: <TeamOutlined />,
@@ -27,14 +30,37 @@ export const MenuSider = (props) => {
       icon: <AppstoreAddOutlined />,
       label: "Clientes",
       subMenu: [
-        { key: "clients/list", icon: <TeamOutlined />, label: "Lista de clientes" },
-        { key: "clients/new", icon: <TeamOutlined />, label: "Nuevo cliente" },
+        {
+          key: "clients/list",
+          icon: <TeamOutlined />,
+          label: "Lista de clientes",
+        },
+        { key: "clients/new", 
+          icon: <TeamOutlined />, 
+          label: "Nuevo cliente" 
+        },
+      ],
+    },
+    {
+      key: "services",
+      icon: <AppstoreOutlined />,
+      label: "Servicios",
+      subMenu: [
+        {
+          key: "services/list",
+          icon: <TeamOutlined />,
+          label: "Lista de servicios",
+        },
+        { key: "services/new", 
+          icon: <TeamOutlined />, 
+          label: "Nuevo servicio" 
+        },
       ],
     },
 
     {
       key: "news",
-      icon: <AppstoreOutlined />,
+      icon: <PartitionOutlined />,
       label: "Gestion de noticias",
     },
   ];
@@ -43,10 +69,9 @@ export const MenuSider = (props) => {
     const path = e.key;
     console.log(path);
     navigate(path);
-  }
+  };
 
   const itemRender = (item, index) => {
-
     const { icon, label, subMenu } = item;
     const isSelected = location.pathname === item.key;
     if (subMenu) {
@@ -66,9 +91,7 @@ export const MenuSider = (props) => {
         key={item.key}
         icon={React.cloneElement(icon, { className: "menu-item-icon" })}
         className={
-          isSelected
-            ? "ant-menu-item ant-menu-item-selected"
-            : "ant-menu-item"
+          isSelected ? "ant-menu-item ant-menu-item-selected" : "ant-menu-item"
         }
       >
         {label}

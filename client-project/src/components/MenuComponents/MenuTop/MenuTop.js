@@ -9,12 +9,10 @@ export const MenuTop = (props) => {
   return (
     <div className="menu-top">
       <div className="menu-top__left">
-        
-        <Button type="link" onClick={() => setMenuCollapsed(!menuCollapsed)}>
+        <Button type="link" onClick={() => setMenuCollapsed(!menuCollapsed)} aria-label={menuCollapsed ? "Mostrar menu" : "Ocultar menu"}>
           {menuCollapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
         </Button>
         <img className="menu-top__left__logo" src={Logo} alt="Logo" />
-
       </div>
     </div>
   );

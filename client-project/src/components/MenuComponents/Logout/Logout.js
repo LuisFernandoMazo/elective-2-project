@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Modal } from "antd";
-import { LogoutOutLined } from "@ant-design/icons";
+import { LogoutOutlined } from "@ant-design/icons";
+
 
 
 export const Logout = () => {
@@ -15,7 +16,8 @@ export const Logout = () => {
     };
     return (
         <Button type="link" onClick={handleLogout}>
-        <LogoutOutLined/>
+           <LogoutOutlined/>
         </Button>
+        
     );
 };
