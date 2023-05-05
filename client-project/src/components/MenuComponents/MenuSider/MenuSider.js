@@ -15,6 +15,7 @@ export const MenuSider = (props) => {
   const navigate = useNavigate();
   const location = useLocation();
 
+  
   const menuItems = [
     { key: "users",
       icon: <HomeOutlined />, 
@@ -64,13 +65,16 @@ export const MenuSider = (props) => {
       label: "Gestion de noticias",
     },
   ];
-
+  /* la función navigateTo se utiliza para manejar la navegación de la aplicación cuando 
+  el usuario selecciona una opción del menú, utilizando el hook useNavigate para navegar a la ruta correspondiente en la aplicación.*/
   const navigateTo = (e) => {
     const path = e.key;
     console.log(path);
     navigate(path);
   };
-
+ 
+  /*la función itemRender se utiliza para renderizar cada opción de menú en el componente Menu de Ant Design, 
+  y puede manejar opciones de menú con submenús anidados utilizando los componentes Menu.SubMenu y Menu.Item.*/
   const itemRender = (item, index) => {
     const { icon, label, subMenu } = item;
     const isSelected = location.pathname === item.key;

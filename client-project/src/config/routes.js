@@ -17,8 +17,8 @@ const GeneralRoutes = [
   { path: "/", component: Home, layout: GeneralLayout },
   { path: "/contact", component: Contact, layout: GeneralLayout },
   { path: "*", component: NotFound, layout: GeneralLayout },
-  { path: "/services/list", component: Service, layout: GeneralLayout },
-  { path: "/services/new", component: NewService, layout: GeneralLayout },
+  { path: "services/list", component: Service, layout: GeneralLayout },
+  { path: "services/new", component: NewService, layout: GeneralLayout },
   { path: "/clients/list", component: Clients, layout: GeneralLayout },
   { path: "/clients/new", component: NewClient, layout: GeneralLayout },
 ];
