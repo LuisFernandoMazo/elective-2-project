@@ -1,7 +1,7 @@
 const DB_HOST = "cluster0.lkt7noc.mongodb.net";
 const DB_USER = "mazo";
 const DB_PASSWORD = "electiva";
-const DB_NAME = "mazo";
+const DB_NAME = "project-software";
 
 const API_VERSION = "v1";
 const IP_SERVER = "localhost";

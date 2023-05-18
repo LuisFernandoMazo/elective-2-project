@@ -5,6 +5,7 @@ const { API_VERSION } = require("./constans");
 const app = express();
 /*cargar rutas */
 const autoRoutes = require ("./src/routes/auth");
+const departamentoMunicipio = require("./src/routes/departamentoMunicipio");
 //const userRoutes = require ("./src/routes/user");
 
 /*Trabajar con la extension client-rest */
@@ -16,5 +17,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(cors());
 console.log(`api/${API_VERSION}/`);
 app.use(`/api/${API_VERSION}/auth`, autoRoutes);
+app.use(`/api/${API_VERSION}/`, departamentoMunicipio); 
+
 //app.use(`/api/${API_VERSION}`, userRoutes);
 module.exports = app;

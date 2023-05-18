@@ -7,11 +7,10 @@ const {
     DB_NAME,
     API_VERSION,
     IP_SERVER,
-    JWT_SECRET_KEY,
 } = require("./constans");
 
 const PORT = 3200;
-app.get(`/api/${API_VERSION}/auth`, (req, res) => res.send('Holi'));
+app.get(`/api/${API_VERSION}/auth`, (req, res) => res.send(''));
 console.log(`mongodb+srv://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`);
 mongoose
         .connect(`mongodb+srv://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`,{

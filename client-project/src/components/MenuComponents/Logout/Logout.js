@@ -10,7 +10,8 @@ export const Logout = () => {
             title: "Cerrar sesión",
             content: "Estas seguro de cerrrar sesion",
             onOk: () => {
-                console.log('cerrando sesion');
+                alert('cerrando sesion');
+                window.location.href = "http://localhost:3002/admin/sign-in";
             },
         });
     };

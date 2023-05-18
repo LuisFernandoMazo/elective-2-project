@@ -1,15 +1,26 @@
 const bcrypt = require("bcryptjs");
 const User = require("../models/user");
 const jwt = require("../utils/jwt");
+const departamentoMunicipio = require("../models/departamentoMunicipio");
+
+const existeDepartamentoMunicipio = async (departamento, municipio) => {
+    const resultado = await departamentoMunicipio.findOne({departamento, municipio});
+    return resultado !== null;
+};
 
 /*funcion que permite el registro de un usuario */
-    const register = async (req, res) => {
-    const {firstname, lastname, email, password} = req.body;
+const register = async (req, res) => {
+    const {firstname, lastname, email, password, departamento, municipio} = req.body;
     if(!email) return res.status(400).send({msg: "El email es requerido"});
     if(!password) return res.status(400).send({msg: "Contraseña requerida"});
 
     const salt = bcrypt.genSaltSync(10);
     const hashPassword = bcrypt.hashSync(password,salt);
+
+    const existe = await existeDepartamentoMunicipio(departamento, municipio);
+    if (!existe) {
+        return res.status(400).send({msg: "El departamento o municipio no existen"});
+    }
 
     const user = new User({
         firstname, 
@@ -18,6 +29,8 @@ const jwt = require("../utils/jwt");
         role: "user",
         active: false, 
         password: hashPassword,
+        departamento,
+        municipio,
     });
 
     try {
