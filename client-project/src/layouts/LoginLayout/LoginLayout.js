@@ -21,7 +21,7 @@ export const LoginLayout = () => {
       .then((response) => {
         console.log("Success:", response.data);
         setLoginSuccess(true);
-        window.location.href = "http://localhost:3002/services/list";
+        window.location.href = "http://localhost:3000/services/list";
         // Aquí puedes realizar las acciones necesarias después de un inicio de sesión exitoso, como guardar el token de acceso en el almacenamiento local o redirigir al usuario a otra página.
       })
       .catch((error) => {
@@ -95,7 +95,7 @@ export const LoginLayout = () => {
               >
                 iniciar sesion
               </Button>
-              <a href="http://localhost:3002/admin/Registration">Registrarse ahora</a>
+              <a href="http://localhost:3000/admin/Registration">Registrarse ahora</a>
               
             </Form.Item>
             {LoginSuccess && (

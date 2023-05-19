@@ -11,7 +11,7 @@ export const Logout = () => {
             content: "Estas seguro de cerrrar sesion",
             onOk: () => {
                 alert('cerrando sesion');
-                window.location.href = "http://localhost:3002/admin/sign-in";
+                window.location.href = "http://localhost:3000/admin/sign-in";
             },
         });
     };

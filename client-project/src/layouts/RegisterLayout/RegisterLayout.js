@@ -184,7 +184,7 @@ export const RegisterLayout = () => {
                 >
                   Registrarse
                 </Button>
-                <a href="http://localhost:3002/admin/sign-in">iniciar sesion</a>
+                <a href="http://localhost:3000/admin/sign-in">iniciar sesion</a>
               </Form.Item>
             </Form>
             {registerSuccess && (
